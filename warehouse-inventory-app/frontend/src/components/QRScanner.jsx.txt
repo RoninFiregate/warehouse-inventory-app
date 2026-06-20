@@ -1,0 +1,20 @@
+import { Scanner } from '@yudiel/react-qr-scanner';
+
+export default function QRScanner({ onResult }) {
+  return (
+    <div>
+      <h3>Skanowanie QR</h3>
+
+      <Scanner
+        onScan={(result) => {
+          if (result?.length > 0) {
+            onResult(result[0].rawValue);
+          }
+        }}
+        onError={(error) => {
+          console.error(error);
+        }}
+      />
+    </div>
+  );
+}

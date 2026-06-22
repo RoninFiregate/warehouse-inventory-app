@@ -7,6 +7,7 @@ const absPath = path.resolve(process.cwd(), dbPath);
 
 fs.mkdirSync(path.dirname(absPath), { recursive: true });
 
+const DB_PATH = process.env.DB_PATH || './warehouse.db';
 const db = new sqlite3.Database(DB_PATH, (err) => {
   if (err) {
     console.error('Error opening database:', err);

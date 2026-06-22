@@ -1,13 +1,13 @@
 const fs = require('fs');
 const path = require('path');
-const sqlite3 = require('sqlite3').verbose();
+const Database = require('better-sqlite3');
 
 const dbPath = process.env.DB_PATH || './data/warehouse.db';
 const absPath = path.resolve(process.cwd(), dbPath);
 
 fs.mkdirSync(path.dirname(absPath), { recursive: true });
 
-const db = new sqlite3.Database(absPath);
+const db = new Database(DB_PATH);
 db.serialize(() => db.run('PRAGMA foreign_keys = ON'));
 
 function run(sql, params = []) {

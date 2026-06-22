@@ -7,7 +7,14 @@ const absPath = path.resolve(process.cwd(), dbPath);
 
 fs.mkdirSync(path.dirname(absPath), { recursive: true });
 
-const db = new sqlite3.Database(DB_PATH);
+const db = new sqlite3.Database(DB_PATH, (err) => {
+  if (err) {
+    console.error('Error opening database:', err);
+  } else {
+    console.log('SQLite database opened at:', DB_PATH);
+  }
+});
+
 db.serialize(() => db.run('PRAGMA foreign_keys = ON'));
 
 function run(sql, params = []) {

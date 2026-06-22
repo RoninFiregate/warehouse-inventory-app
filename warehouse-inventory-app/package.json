@@ -1,10 +1,6 @@
 {
   "name": "warehouse-inventory-app",
   "private": true,
-  "workspaces": [
-    "backend",
-    "frontend"
-  ],
   "scripts": {
     "install:all": "npm install --workspace backend && npm install --workspace frontend",
     "dev": "concurrently \"npm run dev --workspace backend\" \"npm run dev --workspace frontend\"",

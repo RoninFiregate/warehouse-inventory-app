@@ -156,7 +156,7 @@ console.log('DATA STATE:', {
   }
 };
 
-  const exportCsv = (name) => window.location.href = `http://localhost:4000/api/export/${name}?token=${localStorage.getItem('token')}`;
+  const exportCsv = (name) => window.location.href = `https://warehouse-inventory-app-hf5e.onrender.com/api/export/${name}?token=${localStorage.getItem('token')}`;
 
 
   if (!user) return <div className="page"><LoginForm onLogin={login} /></div>;
@@ -637,7 +637,7 @@ onInfo={(row) => {
 
       <td>
         <a
-          href={`http://localhost:4000/api/document/${doc.id}/pdf`}
+          href={`https://warehouse-inventory-app-hf5e.onrender.com/api/document/${doc.id}/pdf`}
           target="_blank"
           rel="noreferrer"
         >

@@ -23,5 +23,6 @@
 - Plik pobierze się z nagłówkami i kodowaniem UTF-8.
 
 ## Domyślne konto
+- dostępne pod adresem: https://warehouse-inventory-app.pages.dev
 - login: admin
 - hasło: Admin123!
